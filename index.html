@@ -478,19 +478,12 @@
 
   </main>
 <div id="footer"></div>
-  <script>
-        // Fetch header and footer files dynamically
-
-        const loadContent = (id, file) => {
-            fetch(file)
-                .then(res => res.text())
-                .then(data => document.getElementById(id).innerHTML = data)
-                .catch(err => console.error(`Error loading ${file}:`, err));
-        };
-
-        loadContent('menubar', 'menubar.html');
-        loadContent('footer', 'footer.html');
-	  
-    </script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    $(function() {
+        $("#menubar").load("menubar.html");
+        $("#footer").load("footer.html");
+    });
+</script>
 </body>
 </html>
