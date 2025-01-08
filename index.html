@@ -1,7 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<div id="header"></div>
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>[THE] Family Gangsta</title>
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/animate.css/animate.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/css/main.css" rel="stylesheet">
+</head>
 <style>
 .menubtn { line-height: 1.2;border: 2px solid var(--accent-color);}
 </style>
@@ -460,41 +480,17 @@
 <div id="footer"></div>
   <script>
         // Fetch header and footer files dynamically
-fetch('header.html')
-    .then(response => {
-        if (!response.ok) {
-            throw new Error('Network response was not ok');
-        }
-        return response.text();
-    })
-    .then(data => {
-        document.querySelector('header').innerHTML = data;
-    })
-    .catch(error => console.error('Error fetching Header:', error));
-
-fetch('menubar.html')
-    .then(response => {
-        if (!response.ok) {
-            throw new Error('Network response was not ok');
-        }
-        return response.text();
-    })
-    .then(data => {
-        document.querySelector('menubar').innerHTML = data;
-    })
-    .catch(error => console.error('Error fetching Top Menu:', error));
-
-fetch('footer.html')
-    .then(response => {
-        if (!response.ok) {
-            throw new Error('Network response was not ok');
-        }
-        return response.text();
-    })
-    .then(data => {
-        document.querySelector('footer').innerHTML = data;
-    })
-    .catch(error => console.error('Error fetching Footer:', error));
+	fetch('menubar.html')
+            .then(response => response.text())
+            .then(html => {
+                document.getElementById('menubar').innerHTML = html;
+            });
+		
+	fetch('footer.html')
+            .then(response => response.text())
+            .then(html => {
+                document.getElementById('footer').innerHTML = html;
+            });
 	  
     </script>
 </body>
