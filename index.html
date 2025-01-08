@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
@@ -21,12 +22,41 @@
   <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
   <link href="assets/css/main.css" rel="stylesheet">
 </head>
-	
 <style>
 .menubtn { line-height: 1.2;border: 2px solid var(--accent-color);}
 </style>
 <body class="index-page">
-  <div id="menubar"></div>
+
+  <header id="header" class="header d-flex align-items-center fixed-top">
+    <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
+
+      <a href="index.html" class="logo d-flex align-items-center">
+        <!-- <img src="assets/img/logo.png" alt=""> -->
+        <!-- <h1 class="sitename"></h1> -->
+		<img src="assets/img/logo.png" class="img-fluid" alt="">
+      </a>
+
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="#hero" class="active">Home</a></li>
+          <li><a href="#team">Team</a></li>
+          <li><a href="calendar.html" class="menubtn">TB Calendar</a></li>
+          <li><a href="/helper/index.html" class="menubtn">TB Helper</a></li>
+          <li><a href="tbgifts.html" class="menubtn">TB Gifts</a></li>
+          <li class="dropdown"><a href="#"><span>Rules</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+            <ul>
+              <li><a href="roek139.html">ROE K139</a></li>
+	      <li><a href="therules.html">Clan Rules</a></li>
+	      <li><a href="cprules.html">CP Run / Rules</a></li>
+            </ul>
+          </li>
+	  <li><a href="#about">About Us</a></li>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+
+    </div>
+  </header>
 
   <main class="main">
 
@@ -477,9 +507,37 @@
     </section><!-- /Contact Section -->
 
   </main>
-<div id="footer"></div>
+
+  <footer id="footer" class="footer dark-background">
+    <div class="container">
+	  <div style="margin: 0 0 30px 0;">
+		<div style="float: left;">
+			<img src="assets/img/wlogo.png" style="max-height: 150px;" alt="" class="img-fluid flex-shrink-0">
+		</div>
+	  <div>
+      <h4 class="sitename">The One & Only Your Great Leader <strong style="color:#ef6603;">WOLFICH</strong></h4>
+      <p>I am committed to leading with strategy, unity, respect and dedication to ensure our clan's success.</p>
+      <div class="social-links d-flex justify-content-center">
+        <a href="\"><i class="bi bi-discord"></i></a>
+      </div>
+	  </div>
+	  </div>
+      <div class="container">
+        <div class="copyright">
+          <span>Copyright 2025 All Rights Reserved</span>
+        </div>
+        <div class="credits">
+          Designed by <a href="\">T3li</a> Distributed By <a href="\">THE</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
   <!-- Scroll Top -->
   <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
 
   <!-- Vendor JS Files -->
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -489,19 +547,7 @@
 
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
-<script>
-        // Fetch header and footer files dynamically
-        fetch('menubar.html')
-            .then(response => response.text())
-            .then(html => {
-                document.getElementById('menubar').innerHTML = html;
-            });
-		
-		fetch('footer.html')
-            .then(response => response.text())
-            .then(html => {
-                document.getElementById('footer').innerHTML = html;
-            });
-    </script>
+
 </body>
+
 </html>
