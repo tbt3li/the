@@ -21,6 +21,7 @@
   <link href="assets/vendor/animate.css/animate.min.css" rel="stylesheet">
   <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
   <link href="assets/css/main.css" rel="stylesheet">
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>  <!-- jQuery -->
 </head>
 <style>
 .menubtn { line-height: 1.2;border: 2px solid var(--accent-color);}
@@ -496,18 +497,13 @@
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
 <script>
-        // Fetch header and footer files dynamically
-	fetch('menubar.html')
-            .then(response => response.text())
-            .then(html => {
-                document.getElementById('menubar').innerHTML = html;
-            });
-		
-	fetch('footer.html')
-            .then(response => response.text())
-            .then(html => {
-                document.getElementById('footer').innerHTML = html;
-            });
+        $(document).ready(function() {
+            // Load header.html into the #header div
+            $('#menubar').load('menubar.html');
+
+            // Load footer.html into the #footer div
+            $('#footer').load('footer.html');
+        });
     </script>
 </body>
 
