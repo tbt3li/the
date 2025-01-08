@@ -481,17 +481,15 @@
   <script>
         // Fetch header and footer files dynamically
 
-        fetch('menubar.html')
-            .then(response => response.text())
-            .then(html => {
-                document.getElementById('menubar').innerHTML = html;
-            });
-		
-	fetch('footer.html')
-            .then(response => response.text())
-            .then(html => {
-                document.getElementById('footer').innerHTML = html;
-            });
+        const loadContent = (id, file) => {
+            fetch(file)
+                .then(res => res.text())
+                .then(data => document.getElementById(id).innerHTML = data)
+                .catch(err => console.error(`Error loading ${file}:`, err));
+        };
+
+        loadContent('menubar', 'menubar.html');
+        loadContent('footer', 'footer.html');
 	  
     </script>
 </body>
